@@ -1,0 +1,42 @@
+<%- include('../header.ejs') %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <%- include('../admin/sidebar.ejs') %> 
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                      <div class="dash-header">
+                        <div class="dash-title">
+                          <h1>Change  Profile</h1>
+                        </div>
+                      </div>
+                      <form action="/updateprofile" method="post"  enctype="multipart/form-data">
+                          <div class="mb-3">
+                              <label for="">Name</label>
+                              <input type="text" class="form-control" name="name" value="<%= n %>">
+                          </div>
+                          <div class="mb-3">
+                              <label for="">Profile</label>
+                              <input type="file" class="form-control" name="image" >
+                              
+                              <img src=" <%= i.url %>" alt="">
+                          </div>
+
+                          <button type="submit" class="btn btn-info">Update</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      
+        </div>
+        </section>
+
+
+
+<%- include('../footer.ejs') %>

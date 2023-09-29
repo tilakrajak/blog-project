@@ -1,0 +1,27 @@
+<%- include('../header.ejs') %>
+
+<section class="dashboard-wrap mtb-40  ">
+  <div class="container">
+    <div class="body-content">
+      <div class="row">
+        <div class="col-md-3">
+        <%- include('../admin/sidebar.ejs') %>
+        </div>
+        <div class="col-md-9">
+          <div class="dash-right">
+            <h1>Welcome,<%= n %></h1>
+            <h3>Your ,<%= e %></h3>
+          <img style="width: 100px; height: 100px;"
+          src="<%= i.url %>" alt="">
+            <p>
+              There is a lot of information out there for free, so you’ve got to
+              figure out what makes your information different.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../footer.ejs') %>

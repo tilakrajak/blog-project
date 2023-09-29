@@ -1,0 +1,44 @@
+<%- include('header') %>
+
+<!-- Register -->
+<div class="container-fluid login-bg">
+    <div class="row align-items-center">
+        <div class="col-log-1"></div>
+        <div class="col-log-4">
+            <div class="shadow-lg bg-white px-3 py-5 mt-5">
+                <h4 class="text-center mb-4 text-decoration-underline"> CREATE YOUR BLOG </h4>
+                <% if(message.length > 0){ %>
+                    <div class="alert alert-danger">
+                        <%= message %>
+                    </div>
+                <% } %>
+                <form action="/admininsert" method="post" novalidate="novalidate" enctype="multipart/form-data">
+                    <div class="mb-4">
+                        <input type="text" name="name" class="form-control rounded-0" placeholder="Name">
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" name="email" class="form-control rounded-0" placeholder="Email">
+                    </div>
+                    <div class="mb-4">
+                        <input type="password" name="password" class="form-control rounded-0" placeholder="Password">
+                    </div>
+                    <div class="mb-4">
+                        <input type="password" name="confirmpassword" class="form-control rounded-0" placeholder="Confirm Password">
+                    </div>
+                    <div class="mb-4">
+                        <input type="number" name="phone" class="form-control rounded-0" placeholder="phone">
+                    </div>
+                    <div class="mb-4">
+                    <textarea type="address" name="address" class="form-control rounded-0"
+                       placeholder="Address"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <input type="file" name="image" class="form-control rounded-0" placeholder="image">
+                    </div>
+                    <button type="submit" class="btn btn-dark rounded-0">Sign Up</button>
+                </form>
+                <p class="mt-3">Have an account?<a href="/login"> Log in</a></p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<%- include('../../header.ejs') %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <%- include('../../admin/sidebar.ejs') %>  
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>Blogs</h1>
+                            </div>
+                           
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>#ID</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Action</th>
+                            </tr>
+                            <% d.forEach((item)=>{ %>
+                                <tr>
+                                    <td><%= item._id %></td>
+                                    <td><img src="<%= item.image.url %>" width="50px" ></td>
+                                    <td><%= item.title %></td>
+                                    <td><%= item.description %></td>
+                                    
+                                    <td>
+                                        <a href="/admin/viewblog/<%= item._id %>" class="btn btn-primary btn-sm">View</a>
+                                        <a href="/admin/editblog/<%= item._id %>" class="btn btn-info btn-sm">Edit</a>
+                                        <a href="/admin/blogdelete/<%= item._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                    </td>
+                                </tr>
+                           <% }) %>
+                            
+        
+                        </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<%- include('../../footer.ejs') %>

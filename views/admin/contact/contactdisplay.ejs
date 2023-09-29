@@ -1,0 +1,41 @@
+<%- include('../../header.ejs') %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <%- include('../../admin/sidebar.ejs') %>  
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>Contact</h1>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>#ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phoneno</th>
+                                <th>Message</th>
+                            </tr>
+                           <% d.forEach((item)=>{ %>
+                                <tr>
+                                    <td><%= item._id %></td>
+                                    <td><%= item.name %></td>
+                                    <td><%= item.email %></td>
+                                    <td><%= item.phoneno %></td>
+                                    <td><%= item.message %></td>
+                                </tr>
+                                <% }) %>
+                            </table>
+                        </div>   
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('../../footer.ejs') %>

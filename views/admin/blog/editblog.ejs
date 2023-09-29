@@ -1,0 +1,49 @@
+<%- include('../../header.ejs') %>
+
+<!-- ***********sidebar********** -->
+<section class="dashboard-wrap mtb-40">
+  <div class="container">
+    <div class="body-content">
+      <div class="row">
+        <div class="col-md-3">
+          <%- include('../../admin/sidebar.ejs') %>
+        </div>
+<!-- ************blog update edit*********** -->
+        <div class="col-md-9">
+          <div class="dash-right">
+            <div class="dash-header">
+              <div class="dash-title">
+                <h1>Blog Update</h1>
+              </div>
+
+            </div>
+          </div>
+          <form action="/blogupdate/<%= edit.id %>" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="">Title</label>
+                <input type="text" class="form-control" name="title" value="<%= edit.title %>">
+            </div>
+            <div class="mb-3">
+                <label for="">Description</label>
+                <textarea type="text" class="form-control" name="description"><%= edit.description %></textarea>
+            </div>
+            <div class="mb-3">
+              <label>Category</label>
+              <input type="text" value="<%= edit.category %>" name="category" class="form-control" >
+            </div>
+            <div class="mb-3">
+                <label for="">Image</label>
+                <input type="file" class="form-control" name="image">
+            </div>
+<img src="<%= edit.image %>" alt="" width="50px">
+            <button type="Submit" class="btn btn-primary">Update</button>
+          </form>
+        </div>
+
+        <!-- ******remaining part of sidebar******** -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../../footer.ejs') %>

@@ -1,0 +1,22 @@
+<%- include('./header.ejs')%>
+<section class="blog-list mtb-40">
+    <div class="container">
+      <h1>Blogs</h1>
+      <div class="row">
+        <% b.forEach((item)=>{ %>
+          <div class="col-md-4 mt-5">
+              <div class="card shadow-lg h-100" >
+                  <img src="<%= item.image.url %>" height="200" alt="" >
+                  <p style="text-transform: uppercase"><%= item.author_name %> , 
+                  </p>
+                  <h3><%= item.title %></h3>
+                  <p><%= item.description.slice(0,120) %></p>
+                 
+                  <a href="/blog-detail/<%= item._id %>" class="btn btn-danger ">Read more...</a>
+              </div>
+          </div>
+          <% }) %>
+      </div>
+    </div>
+  </section>
+<%- include('./footer.ejs')%>

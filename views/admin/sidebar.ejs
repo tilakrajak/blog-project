@@ -1,0 +1,18 @@
+<div class="dash-left">
+    <ul>
+      <li class="active"><a href="/admin/dashboard" class="active">Dashboard</a> </li>
+      <li><a href="/admin/blogdisplay">Blogs</a></li>
+      <li><a href="/admin/categorydisplay">Categories</a></li>
+      <li><a href="/admin/changepassword">ChangePassword</a></li>
+      <li><a href="/admin/profile">ChangeProfile</a></li>
+
+<% if(verified=="Admin") { %>
+      <li><a href="/admin/aboutdisplay">About</a></li>
+      <li><a href="/admin/userblogAll">User Blog All</a></li>
+      <li><a href="/admin/contactdisplay">Contact</a></li>
+      <li><a href="/admin/userdisplay">User</a></li>
+<% } %>
+
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>

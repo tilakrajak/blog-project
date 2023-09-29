@@ -1,0 +1,47 @@
+<%- include('../header.ejs') %>
+
+<!-- ***********sidebar********** -->
+<section class="dashboard-wrap mtb-40">
+  <div class="container">
+    <div class="body-content">
+      <div class="row">
+        <div class="col-md-3">
+          <%- include('../admin/sidebar.ejs') %>
+        </div>
+<!-- ************blog update edit*********** -->
+        <div class="col-md-9">
+          <div class="dash-right">
+            <div class="dash-header">
+              <div class="dash-title">
+                <h1>User Update</h1>
+              </div>
+            </div>
+          </div>
+          <form action="/admin/userupdate/<%= item.id %>" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="">Name</label>
+                <input type="text" class="form-control" name="name" value="<%= item.name %>">
+            </div>
+            <div class="mb-3">
+                <label for="">Email</label>
+                <input type="text" class="form-control" name="email" value="<%= item.email %>">
+            </div>
+            <div class="mb-3">
+                <label for="">Phone</label>
+                <input type="number" class="form-control" name="phone" value="<%= item.phone %>">
+            </div>
+            <div class="mb-3">
+                <label for="">Verified</label>
+                <input type="text" class="form-control" name="verified" value="<%= item.verified %>">
+            </div>
+            <button type="Submit" class="btn btn-primary">Update</button>
+          </form>
+        </div>
+
+        <!-- ******remaining part of sidebar******** -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../footer.ejs') %>

@@ -1,0 +1,58 @@
+<%- include('./header.ejs')%>
+
+<section class="blog-detail mtb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog-left">
+                    <h1><%= d.title %></h1>
+                    <div class="posted-on">
+                        <p>by Mobitech on </p>
+                    </div>
+                    <div class="detail-img">
+                       <img src="<%= d.image.url %>" alt="" >
+                    </div>
+                    <div class="blog-desc">
+                       <p> <%= d.description %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="blog-right">
+                    <div class="right-widget recent-post">
+                        <h3>Recent Blogs</h3>
+                        <a href="#">
+                                <% r.forEach((recentitem)=>{ %>
+                                    <div class="rb-box">
+                                <div class="rb-box-img">
+                                    <img src="<%= recentitem.image.url %>" alt="" >
+                                </div>
+                                <div class="rb-box-desc">
+                                    <h4><%= recentitem.title %></h4>
+                                  
+                                </div>
+                            </div>
+                                <% }) %>
+                            </div>
+                        </a>
+                    </div>
+                     <div class="right-widget categories">
+                         <h3>Categories</h3>
+                         <a href="#">
+                            <% c.forEach((item)=>{ %>
+                                <div class="rb-box">
+                            <div class="rb-box-desc">
+                                <h4><%= item.catname %></h4>
+                            </div>
+                        </div>
+                            <% }) %>
+                        </div>
+                    </a>
+                    
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('./footer.ejs')%>
